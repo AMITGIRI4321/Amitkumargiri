@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit Kumar Giri | Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#080b14;--card:#111725;--text:#f5f7ff;--muted:#9ca8bd;--accent:#6c63ff;--accent2:#00d4ff;--line:#20283a}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;width:500px;height:500px;right:-180px;top:-180px;background:#635bff33;filter:blur(100px);border-radius:50%;z-index:-1}
+body:after{content:"";position:fixed;width:450px;height:450px;left:-180px;bottom:-180px;background:#00d4ff20;filter:blur(110px);border-radius:50%;z-index:-1}
+header{position:fixed;top:0;left:0;width:100%;z-index:100;padding:16px 7%;transition:.3s}
+header.scrolled{background:#080b14cc;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:23px;font-weight:800}.logo span{color:var(--accent2)}
+nav{display:flex;gap:28px}nav a{color:#b9c2d3;text-decoration:none;font-size:14px;font-weight:600;transition:.25s}nav a:hover,nav a.active{color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:25px}
+.btn{display:inline-flex;padding:12px 19px;border-radius:12px;text-decoration:none;font-weight:700;font-size:13px;transition:.25s;border:1px solid #ffffff18}
+.btn.primary{background:linear-gradient(100deg,var(--accent),#328cff);color:#fff;box-shadow:0 10px 30px #625cff35}
+.btn.secondary{color:#fff;background:#ffffff08}.btn:hover{transform:translateY(-3px)}
+section{max-width:1200px;margin:auto;padding:105px 7% 55px}
+.hero{min-height:100vh;display:flex;align-items:center;gap:50px;padding-top:130px}
+.hero-text{flex:1}.eyebrow{display:inline-block;color:#8ea0ff;background:#6c63ff12;border:1px solid #6c63ff40;padding:8px 12px;border-radius:30px;font-size:12px;margin-bottom:18px}
+h1{font-size:clamp(42px,6vw,75px);line-height:1.03;letter-spacing:-3px}
+.gradient{background:linear-gradient(100deg,#fff,#8a82ff,#00d4ff);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:620px;line-height:1.8;margin:20px 0 28px;font-size:15px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.socials{display:flex;gap:12px;margin-top:24px}.socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:11px;display:grid;place-items:center;color:#cbd3e3;text-decoration:none}
+.hero-card{width:390px;height:390px;position:relative;display:grid;place-items:center}
+.avatar{width:245px;height:245px;border-radius:50%;background:linear-gradient(145deg,#191f34,#0d1220);border:1px solid #ffffff18;display:grid;place-items:center;box-shadow:0 0 80px #635bff35, inset 0 0 50px #00d4ff0c;position:relative;z-index:2}
+.avatar .initial{font-size:80px;font-weight:800;background:linear-gradient(135deg,#fff,#746bff,#00d4ff);-webkit-background-clip:text;color:transparent}
+.ring{position:absolute;width:330px;height:330px;border:1px dashed #5e68ff80;border-radius:50%;animation:spin 18s linear infinite}
+.ring:before,.ring:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:#00d4ff;box-shadow:0 0 20px #00d4ff;top:25px;left:50%}
+.ring:after{background:#7b6cff;box-shadow:0 0 20px #7b6cff;bottom:35px;top:auto;left:15%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.section-head{text-align:center;margin-bottom:40px}.section-head span{color:#817aff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px}.section-head h2{font-size:34px;margin-top:8px}.section-head p{color:var(--muted);font-size:14px;margin-top:10px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.card{background:linear-gradient(145deg,#121827cc,#0d1320cc);border:1px solid var(--line);border-radius:20px;padding:27px;backdrop-filter:blur(12px);box-shadow:0 20px 50px #00000018;transition:.3s}.card:hover{transform:translateY(-5px);border-color:#555cff66}.card p{color:var(--muted);line-height:1.8;font-size:14px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.info{padding:15px;background:#ffffff05;border-radius:12px;border:1px solid #ffffff08}.info small{color:#7f8ba2;display:block;margin-bottom:5px}.info b{font-size:13px}
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:20px}.skill{margin:18px 0}.skill-top{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px}.skill-top span:last-child{color:#8290aa}.bar{height:8px;background:#20283a;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:20px;transition:1.3s}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{min-height:250px;display:flex;flex-direction:column}.project-icon{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#6c63ff25,#00d4ff18);display:grid;place-items:center;font-size:22px;margin-bottom:18px}.project h3{margin-bottom:10px}.project p{flex:1}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:10px;color:#aeb8cb;background:#ffffff08;border:1px solid #ffffff0d;padding:6px 8px;border-radius:8px}
+.timeline{position:relative;max-width:800px;margin:auto}.timeline:before{content:"";position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),var(--accent2))}.timeline-item{position:relative;padding-left:52px;margin-bottom:25px}.dot{position:absolute;left:8px;top:7px;width:16px;height:16px;background:#111725;border:4px solid #746bff;border-radius:50%}.timeline-item small{color:#7f8ba2}.timeline-item h3{margin:6px 0}.timeline-item p{color:var(--muted);font-size:13px;line-height:1.7}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.contact-list{display:grid;gap:12px;margin-top:20px}.contact-item{padding:15px;background:#ffffff05;border:1px solid #ffffff08;border-radius:12px}.contact-item small{display:block;color:#7f8ba2;margin-bottom:5px}.contact-item b{font-size:13px}
+form{display:grid;gap:13px}input,textarea{width:100%;background:#090e18;border:1px solid var(--line);color:#fff;border-radius:11px;padding:14px;outline:0;font-size:13px}input:focus,textarea:focus{border-color:#6861ff}textarea{height:130px;resize:vertical}
+footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:#77839a;font-size:12px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.show{opacity:1;transform:none}
+#topBtn{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:#151b2a;color:#fff;cursor:pointer;display:none}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.education-section{position:relative}
+.education-section .timeline:before{
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform 1.5s cubic-bezier(.2,.8,.2,1);
+}
+.education-section .timeline.active:before{transform:scaleY(1)}
+.timeline-item{
+  opacity:0;
+  transform:translateX(-35px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.timeline-item.active{opacity:1;transform:translateX(0)}
+.timeline-item:nth-child(2){transition-delay:.12s}
+.timeline-item:nth-child(3){transition-delay:.24s}
+.timeline-item .dot{
+  transform:scale(.4);
+  box-shadow:0 0 0 0 #746bff00;
+  transition:transform .5s ease,box-shadow .8s ease;
+}
+.timeline-item.active .dot{
+  transform:scale(1);
+  box-shadow:0 0 0 7px #746bff12,0 0 25px #746bff;
+}
+.reveal{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.card.reveal{transform:translateY(35px) scale(.98)}
+.card.reveal.show{transform:translateY(0) scale(1)}
+.hero-text.reveal{transform:translateX(-35px)}
+.hero-card.reveal{transform:translateX(35px)}
+.hero-text.reveal.show,.hero-card.reveal.show{transform:translateX(0)}
+.skill .fill{box-shadow:0 0 14px #625cff66}
+#topBtn{
+  display:grid!important;
+  place-items:center;
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(0);
+  transition:opacity .3s,transform .25s,box-shadow .25s;
+  animation:floatButton 2s ease-in-out infinite;
+  box-shadow:0 8px 25px #0008;
+  z-index:200;
+}
+#topBtn.visible{opacity:1;pointer-events:auto}
+#topBtn:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px #635bff66}
+@keyframes floatButton{
+  0%,100%{margin-bottom:0}
+  50%{margin-bottom:7px}
+}
+.section-head.reveal.show h2{
+  animation:titleIn .8s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes titleIn{
+  from{opacity:0;transform:translateY(18px);filter:blur(5px)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+
+@media(max-width:900px){nav{display:none}.menu{display:block}.hero{flex-direction:column;text-align:center}.hero p{margin-left:auto;margin-right:auto}.actions,.socials{justify-content:center}.hero-card{width:320px;height:320px}.avatar{width:205px;height:205px}.ring{width:280px;height:280px}.about-grid,.contact{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){section{padding-left:5%;padding-right:5%}.hero{padding-top:120px}.skills,.projects{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}h1{letter-spacing:-2px}.section-head h2{font-size:28px}}
+</style>
+</head>
+<body>
+<header id="header"><div class="nav">
+<div class="logo">AMIT<span>.</span></div>
+<nav id="nav"><a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+<button class="menu" id="menu">☰</button>
+</div></header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-text reveal">
+<span class="eyebrow">AVAILABLE FOR PROJECTS</span>
+<h1>Hi, I'm <span class="gradient">Amit Kumar Giri</span></h1>
+<p>I’m a passionate student and aspiring web developer who loves creating modern websites, interactive interfaces and practical software projects.</p>
+<div class="actions"><a class="btn primary" href="#projects">View My Work →</a><a class="btn secondary" href="#contact">Let's Talk</a></div>
+<div class="socials"><a href="#">GH</a><a href="#">in</a><a href="#">YT</a><a href="#">✉</a></div>
+</div>
+<div class="hero-card reveal"><div class="ring"></div><div class="avatar"><div class="initial">AKG</div></div></div>
+</section>
+
+<section id="about">
+<div class="section-head reveal"><span>About Me</span><h2>Turning ideas into digital experiences.</h2><p>A little information about me and what I do.</p></div>
+<div class="about-grid">
+<div class="card reveal"><h3>Who I Am</h3><br><p>I enjoy learning programming, web development and problem solving. My goal is to build clean, useful and attractive digital products while continuously improving my technical skills.</p><div class="info-grid"><div class="info"><small>Role</small><b>Student / Web Developer</b></div><div class="info"><small>Focus</small><b>Web & Programming</b></div><div class="info"><small>Learning</small><b>C++ • DSA • Java • Python</b></div><div class="info"><small>Passion</small><b>Creative Technology</b></div></div></div>
+<div class="card reveal"><h3>My Approach</h3><br><p>I believe a good interface should look beautiful, feel fast and remain simple to use. I combine design, code and animation to create experiences that feel modern and professional.</p><br><a class="btn primary" href="#contact">Work With Me</a></div>
+</div>
+</section>
+
+<section id="skills">
+<div class="section-head reveal"><span>My Skills</span><h2>Tools I work with</h2></div>
+<div class="card reveal skills">
+<div><div class="skill"><div class="skill-top"><span>HTML / CSS</span><span>90%</span></div><div class="bar"><div class="fill" data-width="90%"></div></div></div>
+<div class="skill"><div class="skill-top"><span>JavaScript</span><span>78%</span></div><div class="bar"><div class="fill" data-width="78%"></div></div></div>
+<div class="skill"><div class="skill-top"><span>Java</span><span>82%</span></div><div class="bar"><div class="fill" data-width="82%"></div></div></div></div>
+<div><div class="skill"><div class="skill-top"><span>C++ / DSA</span><span>75%</span></div><div class="bar"><div class="fill" data-width="75%"></div></div></div>
+<div class="skill"><div class="skill-top"><span>Python</span><span>72%</span></div><div class="bar"><div class="fill" data-width="72%"></div></div></div>
+<div class="skill"><div class="skill-top"><span>UI / UX</span><span>80%</span></div><div class="bar"><div class="fill" data-width="80%"></div></div></div></div>
+</div>
+</section>
+
+<section id="projects">
+<div class="section-head reveal"><span>Portfolio</span><h2>Featured Projects</h2><p>Some projects you can showcase on your portfolio.</p></div>
+<div class="projects">
+<div class="card project reveal"><div class="project-icon">🎓</div><h3>Student Dashboard</h3><p>A responsive student management dashboard with attendance, CGPA, timetable, assignments and course progress.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></div>
+<div class="card project reveal"><div class="project-icon">💼</div><h3>Personal Portfolio</h3><p>A modern portfolio interface with animated sections, responsive layout, glass effects and interactive navigation.</p><div class="tags"><span class="tag">Web Design</span><span class="tag">Animation</span></div></div>
+<div class="card project reveal"><div class="project-icon">🧮</div><h3>Smart Calculator</h3><p>A clean interactive calculator interface designed for desktop and mobile screens with smooth user interactions.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">UI</span></div></div>
+</div>
+</section>
+
+<section id="education" class="education-section">
+<div class="section-head reveal"><span>Journey</span><h2>Education</h2></div>
+<div class="timeline">
+<div class="timeline-item reveal"><div class="dot"></div><small>Current</small><h3>College / Higher Education</h3><p>Building strong foundations in programming, software development and computer science concepts.</p></div>
+<div class="timeline-item reveal"><div class="dot"></div><small>Learning Path</small><h3>Programming & DSA</h3><p>Practicing C++, Java, Python, data structures, algorithms and problem solving.</p></div>
+<div class="timeline-item reveal"><div class="dot"></div><small>Future Goal</small><h3>Professional Software Developer</h3><p>Continuously developing projects and preparing for professional opportunities in technology.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="section-head reveal"><span>Contact</span><h2>Let's build something great.</h2></div>
+<div class="contact">
+<div class="card reveal"><h3>Get In Touch</h3><p style="margin-top:12px">Have a project, idea or collaboration in mind? Send me a message.</p><div class="contact-list"><div class="contact-item"><small>Email</small><b>your-email@example.com</b></div><div class="contact-item"><small>Location</small><b>India</b></div><div class="contact-item"><small>Availability</small><b>Open to opportunities</b></div></div></div>
+<div class="card reveal"><form id="contactForm"><input required placeholder="Your Name"><input required type="email" placeholder="Your Email"><input placeholder="Subject"><textarea required placeholder="Your Message"></textarea><button class="btn primary" type="submit">Send Message →</button></form></div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 Amit Kumar Giri • Designed & Built with HTML, CSS & JavaScript</footer>
+<button id="topBtn">↑</button>
+<script>
+const header=document.getElementById('header'),topBtn=document.getElementById('topBtn'),menu=document.getElementById('menu'),nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>30);topBtn.classList.toggle('visible',scrollY>350)});
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+menu.onclick=()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';nav.style.flexDirection='column';nav.style.position='absolute';nav.style.right='5%';nav.style.top='65px';nav.style.background='#111725';nav.style.padding='15px';nav.style.borderRadius='14px'};
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>{document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active');if(innerWidth<=900)nav.style.display='none'});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+ if(e.isIntersecting){
+   e.target.classList.add('show');
+   e.target.querySelectorAll?.('.fill').forEach(f=>f.style.width=f.dataset.width);
+ }
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+
+/* Education vertical bar + item animation */
+const edu=document.querySelector('.education-section');
+const timeline=document.querySelector('.education-section .timeline');
+const eduObserver=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting){
+     timeline.classList.add('active');
+     document.querySelectorAll('.education-section .timeline-item').forEach((item,i)=>{
+       setTimeout(()=>item.classList.add('active'),i*220);
+     });
+   }
+ });
+},{threshold:.22});
+if(edu) eduObserver.observe(edu);
+document.getElementById('contactForm').onsubmit=e=>{e.preventDefault();alert('Thank you! Your message has been prepared. Connect your form backend to receive real messages.');e.target.reset()};
+</script>
+</body>
+</html>
