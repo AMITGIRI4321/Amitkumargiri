@@ -89,6 +89,122 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
   box-shadow:0 8px 25px #0008;
   z-index:200;
 }
+  /* css education */
+  /* Education Timeline */
+.timeline {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Education glass box */
+.timeline-item {
+    position: relative;
+    margin: 30px 0;
+    padding: 28px 30px 28px 55px;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.08);
+
+    transition: 0.4s ease;
+}
+
+/* Hover effect */
+.timeline-item:hover {
+    transform: translateY(-8px);
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 15px 45px rgba(0, 217, 255, 0.18),
+        0 0 25px rgba(0, 217, 255, 0.15);
+}
+
+/* Timeline glowing line */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 8px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 40px #0066ff;
+}
+
+/* Round glowing point */
+.timeline-item .dot {
+    position: absolute;
+    left: 10px;
+    top: 32px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    background: #111;
+
+    border: 3px solid #00d9ff;
+
+    box-shadow:
+        0 0 8px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 40px #0066ff;
+
+    z-index: 2;
+
+    animation: educationGlow 1.5s infinite alternate;
+}
+
+@keyframes educationGlow {
+    from {
+        transform: scale(1);
+        box-shadow:
+            0 0 5px #00d9ff,
+            0 0 15px #00d9ff;
+    }
+
+    to {
+        transform: scale(1.25);
+        box-shadow:
+            0 0 10px #00d9ff,
+            0 0 25px #00d9ff,
+            0 0 45px #0066ff;
+    }
+}
+
+/* Text */
+.timeline-item small {
+    color: #00d9ff;
+    font-weight: 600;
+}
+
+.timeline-item h3 {
+    margin: 8px 0;
+    color: white;
+}
+
+.timeline-item p {
+    color: #b8c4d9;
+    margin: 0;
+}
+  /* css education end */
 #topBtn.visible{opacity:1;pointer-events:auto}
 #topBtn:hover{transform:translateY(-5px) scale(1.06);box-shadow:0 12px 30px #635bff66}
 @keyframes floatButton{
@@ -153,7 +269,7 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
 <div class="card project reveal"><div class="project-icon">💼</div><h3>Personal Portfolio</h3><p>A modern portfolio interface with animated sections, responsive layout, glass effects and interactive navigation.</p><div class="tags"><span class="tag">Web Design</span><span class="tag">Animation</span></div></div>
 <div class="card project reveal"><div class="project-icon">🧮</div><h3>Smart Calculator</h3><p>A clean interactive calculator interface designed for desktop and mobile screens with smooth user interactions.</p><div class="tags"><span class="tag">JavaScript</span><span class="tag">UI</span></div></div>
 </div>
-</section>
+<!-- </section>
 
 <section id="education" class="education-section">
 <div class="section-head reveal"><span>Journey</span><h2>Education</h2></div>
@@ -162,8 +278,61 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
 <div class="timeline-item reveal"><div class="dot"></div><small>Learning Path</small><h3>Programming & DSA</h3><p>Practicing C++, Java, Python, data structures, algorithms and problem solving.</p></div>
 <div class="timeline-item reveal"><div class="dot"></div><small>Future Goal</small><h3>Professional Software Developer</h3><p>Continuously developing projects and preparing for professional opportunities in technology.</p></div>
 </div>
-</section>
+</section> -->
+<section id="education" class="education-section">
 
+    <div class="section-head reveal">
+        <span>Journey</span>
+        <h2>My Education</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+            <div class="dot"></div>
+
+            <small>Present</small>
+
+            <h3>
+                BALSORE COLLEGE OF ENGINEERING AND TECHNOLOGY
+            </h3>
+
+            <p>
+                B.Tech (Computer Science And Engineering)
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <div class="dot"></div>
+
+            <small>2022-2024</small>
+
+            <h3>
+                Laxmikanta Higher Secondary School, Bangriposi
+            </h3>
+
+            <p>
+                CHSE (Science)
+            </p>
+        </div>
+
+        <div class="timeline-item reveal">
+            <div class="dot"></div>
+
+            <small>2021-2022</small>
+
+            <h3>
+                Satish Chandra Vidyapitha, Shyamsundarpur
+            </h3>
+
+            <p>
+                BSE Odisha
+            </p>
+        </div>
+
+    </div>
+
+</section>
 <section id="contact">
 <div class="section-head reveal"><span>Contact</span><h2>Let's build something great.</h2></div>
 <div class="contact">
