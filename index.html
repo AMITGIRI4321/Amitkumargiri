@@ -142,12 +142,10 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
 
 /* Hover effect */
 .timeline-item:hover {
-    transform: translateY(-8px);
+    transform: none;
     border-color: #00d9ff;
 
-    box-shadow:
-        0 1px 1px rgba(0, 217, 255, 0.18),
-        0 0 5px rgba(0, 217, 255, 0.15);
+    box-shadow:none ;
 }
 
 /* Timeline glowing line */
@@ -165,10 +163,7 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
 
     background: #00d9ff;
 
-    box-shadow:
-        0 0 0px #00d9ff,
-        0 0 0px #00d9ff,
-        0 0 0px #0066ff;
+    box-shadow:none ;
 }
 
 /* Round glowing point */
@@ -185,30 +180,22 @@ footer{text-align:center;padding:30px 7%;border-top:1px solid var(--line);color:
 
     border: 3px solid #00d9ff;
 
-    box-shadow:
-        0 0 0px #00d9ff,
-        0 0 0px #00d9ff,
-        0 0 0px #0066ff;
+    box-shadow:none ;
 
     z-index: 2;
 
-    animation: educationGlow 1.5s infinite alternate;
+    animation: educationGlow 0s infinite alternate;
 }
 
 @keyframes educationGlow {
     from {
         transform: scale(1);
-        box-shadow:
-            0 0 0px #00d9ff,
-            0 0 0px #00d9ff;
+        box-shadow:none ;
     }
 
     to {
         transform: scale(1.25);
-        box-shadow:
-            0 0 0px #00d9ff,
-            0 0 8px #00d9ff,
-            0 0 8px #0066ff;
+        box-shadow:none ;
     }
 }
 
@@ -378,16 +365,14 @@ header p {
 }
 
 .card:hover {
-  transform: translateY(-1px);
+  transform: none;
 }
 
 
 /* Blue Card */
 
 .clock-card {
-  box-shadow:
-    0 0 20px rgba(0,153,255,.25),
-    inset 0 0 20px rgba(0,153,255,.04);
+  box-shadow: none;
 
   animation:
     blueCardGlow 3s ease-in-out infinite alternate;
@@ -397,9 +382,7 @@ header p {
 /* Pink Card */
 
 .visitor-card {
-  box-shadow:
-    0 0 10px rgba(255,0,220,.25),
-    inset 0 0 20px rgba(255,0,220,.04);
+  box-shadow: none;
 
   animation:
     pinkCardGlow 3s ease-in-out infinite alternate;
@@ -443,10 +426,7 @@ header p {
   border:
     2px solid #19aaff;
 
-  box-shadow:
-    0 0 10px #19aaff,
-    0 0 20px rgba(25,170,255,.7),
-    inset 0 0 10px rgba(25,170,255,.25);
+  box-shadow: none;
 }
 
 
@@ -504,9 +484,7 @@ header p {
 
   color: #54caff;
 
-  text-shadow:
-    0 0 1px #00aaff,
-    0 0 1px rgba(0,170,255,.8);
+  text-shadow: none;
 
   margin-bottom: 30px;
 }
@@ -538,8 +516,7 @@ header p {
 
   text-align: center;
 
-  box-shadow:
-    inset 0 0 9px rgba(0,150,255,.05);
+  box-shadow: none;
 }
 
 .time-boxes small {
@@ -575,7 +552,7 @@ header p {
     );
 
   box-shadow:
-    0 0 9px #168fff;
+    none;
 }
 
 
@@ -676,8 +653,7 @@ header p {
     rgba(255,0,220,.04);
 
   box-shadow:
-    0 0 9px rgba(255,0,220,.2);
-
+    none;
   animation:
     thankGlow 2s ease-in-out infinite alternate;
 }
@@ -692,7 +668,7 @@ footer {
 
   padding: 18px;
 
-  border-radius: 50px;
+  border-radius: 0px;
 
   text-align: center;
 
@@ -737,10 +713,7 @@ footer {
   border:
     3px solid #008cff;
 
-  box-shadow:
-    0 0 7px #008cff,
-    0 0 7px #008cff,
-    0 0 7px rgba(0,140,255,.7);
+  box-shadow: none;
 }
 
 
@@ -754,9 +727,7 @@ footer {
     3px solid #b238ff;
 
   box-shadow:
-    0 0 7px #b238ff,
-    0 0 7px #b238ff,
-    0 0 7px rgba(178,56,255,.7);
+    none;
 
   animation-delay: -1s;
 }
